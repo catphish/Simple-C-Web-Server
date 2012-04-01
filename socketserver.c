@@ -48,7 +48,7 @@ int main(int argc, char *argv[]) {
   // Loop
   while(1) {
     // Allocate some memory to temporarily store a file descriptor to pass to a new thread
-    p_clientfd = (int*)malloc(sizeof(int));
+    p_clientfd = malloc(sizeof(int));
     // Accept a connection, store its descriptor
     *p_clientfd = accept(serverfd, (struct sockaddr *) &cli_addr, (socklen_t *) &clilen);
     // Create a thread, pass it the file descriptor of the client
